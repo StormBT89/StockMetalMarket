@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html?>
+    <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realtime Metal Prices  by Pece</title>
+
+    </head>
+    <body style="background-color: yellowgreen">
+
+    <h1 style="text-align: center;"> Следење на берзата на благородни метали </h1>
+
+    <h3 style="text-align: center;"> Добивање на податоци според Ваш избор на метал и валута</h3>
+
+    <h4 style="text-align: center;"> После направениот избор, кликнете на копчето Потврди</h4>
+    
+        <p></p>
+        
+        <form action="/peceTest" method="post">
+          <label for="metal">Изберете метал:</label>
+          <select name="metal" id="metal">
+            <option value="XAU">Gold Price</option>
+            <option value="XAU_OPEN">Gold Open Price</option>
+            <option value="XAU_CHANGE">Gold Price Change Since Open</option>
+            <option value="XAU_CHANGEPERCENT">Gold Price Change Since Open (Percent)</option>
+            <option value="XAU_1K">1 Karat Gold Price</option>
+            <option value="XAU_2K">2 Karat Gold Price</option>
+            <option value="XAU_3K">3 Karat Gold Price</option>
+            <option value="XAU_4K">4 Karat Gold Price</option>
+            <option value="XAU_5K">5 Karat Gold Price</option>
+            <option value="XAU_6K">6 Karat Gold Price</option>
+            <option value="XAU_7K">7 Karat Gold Price</option>
+            <option value="XAU_8K">8 Karat Gold Price</option>
+            <option value="XAU_9K">9 Karat Gold Price</option>
+            <option value="XAU_10K">10 Karat Gold Price</option>
+            <option value="XAU_11K">11 Karat Gold Price</option>
+            <option value="XAU_12K">12 Karat Gold Price</option>
+            <option value="XAU_13K">13 Karat Gold Price</option>
+            <option value="XAU_14K">14 Karat Gold Price</option>
+            <option value="XAU_15K">15 Karat Gold Price</option>
+            <option value="XAU_16K">16 Karat Gold Price</option>
+            <option value="XAU_17K">17 Karat Gold Price</option>
+            <option value="XAU_18K">18 Karat Gold Price</option>
+            <option value="XAU_19K">19 Karat Gold Price</option>
+            <option value="XAU_20K">20 Karat Gold Price</option>
+            <option value="XAU_21K">21 Karat Gold Price</option>
+            <option value="XAU_22K">22 Karat Gold Price</option>
+            <option value="XAU_23K">23 Karat Gold Price</option>
+            <option value="XAU_24K">24 Karat Gold Price</option>
+            <option value="XAG">Silver Price</option>
+            <option value="XAG_OPEN">Silver Open Price</option>
+            <option value="XAG_CHANGE">Silver Price Change Since Open</option>
+            <option value="XAG_CHANGEPERCENT">Silver Price Change Since Open (Percentage)</option>
+            <option value="PA">Palladium</option>
+            <option value="PL">Platinum</option>
+          </select>
+          <br><br>
+
+          <label for="metal">Изберете валута:</label>
+          <select name="currencies" id="currencies">
+            <option value="USD">United States Dollar</option>
+            <option value="ALL">Albania Lek</option>
+            <option value="DZD">Algeria Dinar</option>
+            <option value="AOA">Angola Kwanza</option>
+            <option value="ARS">Argentina Peso</option>
+            <option value="AMD">Armenia Dram</option>
+            <option value="AWG">Aruba Guilder</option>
+            <option value="AUD">Australia Dollar</option>
+            <option value="AZN">Azerbaijan Manat</option>
+            <option value="BSD">Bahamas Dollar</option>
+            <option value="BHD">Bahrain Dinar</option>
+            <option value="BDT">Bangladesh Taka</option>
+            <option value="BBD">Barbados Dollar</option>
+            <option value="BYN">Belarus Ruble</option>
+            <option value="BZD">Belize Dollar</option>
+            <option value="BMD">Bermuda Dollar</option>
+            <option value="BTN">Bhutan Ngultrum</option>
+            <option value="BOB">Bolivia Bolíviano</option>
+            <option value="BAM">Bosnia and Herzegovina Convertible Marka</option>
+            <option value="BWP">Botswana Pula</option>
+            <option value="BRL">Brazil Real</option>
+            <option value="BND">Brunei Darussalam Dollar</option>
+            <option value="BGN">Bulgaria Lev</option>
+            <option value="BIF">Burundi Franc</option>
+            <option value="KHR">Cambodia Riel</option>
+            <option value="CAD">Canada Dollar</option>
+            <option value="CVE">Cape Verde Escudo</option>
+            <option value="KYD">Cayman Islands Dollar</option>
+            <option value="CLP">Chile Peso</option>
+            <option value="CNY">China Yuan Renminbi</option>
+            <option value="COP">Colombia Peso</option>
+            <option value="XOF">Communauté Financière Africaine (BCEAO) Franc</option>
+            <option value="XAF">Communauté Financière Africaine (BEAC) CFA Franc BEAC</option>
+            <option value="KMF">Comorian Franc</option>
+            <option value="XPF">Comptoirs Français du Pacifique (CFP) Franc</option>
+            <option value="CDF">Congo/Kinshasa Franc</option>
+            <option value="CRC">Costa Rica Colon</option>
+            <option value="HRK">Croatia Kuna</option>
+            <option value="CUP">Cuba Peso</option>
+            <option value="CZK">Czech Republic Koruna</option>
+            <option value="DKK">Denmark Krone</option>
+            <option value="DJF">Djibouti Franc</option>
+            <option value="DOP">Dominican Republic Peso</option>
+            <option value="XCD">East Caribbean Dollar</option>
+            <option value="EGP">Egypt Pound</option>
+            <option value="SVC">CEl Salvador Colon</option>
+            <option value="ETB">Ethiopia Birr</option>
+            <option value="EUR">Euro Member Countries</option>
+            <option value="FJD">Fiji Dollar</option>
+            <option value="GMD">Gambia Dalasi</option>
+            <option value="GEL">Georgia Lari</option>
+            <option value="GHS">Ghana Cedi</option>
+            <option value="GTQ">Guatemala Quetzal</option>
+            <option value="GNF">Guinea Franc</option>
+            <option value="GYD">Guyana Dollar</option>
+            <option value="HTG">Haiti Gourde</option>
+            <option value="HNL">Honduras Lempira</option>
+            <option value="HKD">Hong Kong Dollar</option>
+            <option value="HUF">Hungary Forint</option>
+            <option value="ISK">Iceland Krona</option>
+            <option value="INR">India Rupee</option>
+            <option value="IDR">Indonesia Rupiah</option>
+            <option value="IRR">Iran Rial</option>
+            <option value="IQD">Iraq Dinar</option>
+            <option value="ILS">Israel Shekel</option>
+            <option value="JMD">Jamaica Dollar</option>
+            <option value="JPY">Japan Yen</option>
+            <option value="JOD">Jordan Dinar</option>
+            <option value="KZT">Kazakhstan Tenge</option>
+            <option value="KES">Kenya Shilling</option>
+            <option value="KRW">Korea (South) Won</option>
+            <option value="KWD">Kuwait Dinar</option>
+            <option value="KGS">Kyrgyzstan Som</option>
+            <option value="LAK">Laos Kip</option>
+            <option value="LBP">Lebanon Pound</option>
+            <option value="LSL">Lesotho Loti</option>
+            <option value="LRD">Liberia Dollar</option>
+            <option value="LYD">Libya Dinar</option>
+            <option value="MOP">Macau Pataca</option>
+            <option value="MKD">Macedonia Denar</option>
+            <option value="MGA">Madagascar Ariary</option>
+            <option value="MWK">Malawi Kwacha</option>
+            <option value="MYR">Malaysia Ringgit</option>
+            <option value="MVR">Maldives (Maldive Islands) Rufiyaa</option>
+            <option value="MUR">Mauritius Rupee</option>
+            <option value="MXN">Mexico Peso</option>
+            <option value="MDL">Moldova Leu</option>
+            <option value="MAD">Morocco Dirham</option>
+            <option value="MZN">Mozambique Metical</option>
+            <option value="MMK">Myanmar (Burma) Kyat</option>
+            <option value="NAD">Namibia Dollar</option>
+            <option value="NPR">Nepal Rupee</option>
+            <option value="ANG">Netherlands Antilles Guilder</option>
+            <option value="NZD">New Zealand Dollar</option>
+            <option value="NIO">Nicaragua Cordoba</option>
+            <option value="NGN">Nigeria Naira</option>
+            <option value="NOK">Norway Krone</option>
+            <option value="OMR">Oman Rial</option>
+            <option value="PKR">Pakistan Rupee</option>
+            <option value="PAB">Panama Balboa</option>
+            <option value="PGK">Papua New Guinea Kina</option>
+            <option value="PYG">Paraguay Guarani</option>
+            <option value="PEN">Peru Sol</option>
+            <option value="PHP">Philippines Peso</option>
+            <option value="PLN">Poland Zloty</option>
+            <option value="QAR">Qatar Riyal</option>
+            <option value="RON">Romania Leu</option>
+            <option value="RUB">Russia Ruble</option>
+            <option value="RWF">Rwanda Franc</option>
+            <option value="SAR">Saudi Arabia Riyal</option>
+            <option value="RSD">Serbia Dinar</option>
+            <option value="SCR">Seychelles Rupee</option>
+            <option value="SLL">Sierra Leone Leone</option>
+            <option value="SGD">Singapore Dollar</option>
+            <option value="SBD">Solomon Islands Dollar</option>
+            <option value="SOS">Somalia Shilling</option>
+            <option value="ZAR">South Africa Rand</option>
+            <option value="LKR">Sri Lanka Rupee</option>
+            <option value="SDG">Sudan Pound</option>
+            <option value="SRD">Suriname Dollar</option>
+            <option value="SZL">Swaziland Lilangeni</option>
+            <option value="SEK">Sweden Krona</option>
+            <option value="CHF">Switzerland Franc</option>
+            <option value="TWD">Taiwan New Dollar</option>
+            <option value="TJS">Tajikistan Somoni</option>
+            <option value="TZS">Tanzania Shilling</option>
+            <option value="THB">Thailand Baht</option>
+            <option value="TOP">Tonga Paanga</option>
+            <option value="TTD">Trinidad and Tobago Dollar</option>
+            <option value="TND">Tunisia Dinar</option>
+            <option value="TRY">Turkey Lira</option>
+            <option value="TMT">Turkmenistan Manat</option>
+            <option value="UGX">Uganda Shilling</option>
+            <option value="UAH">Ukraine Hryvnia</option>
+            <option value="AED">United Arab Emirates Dirham</option>
+            <option value="GBP">United Kingdom Pound</option>
+            <option value="UYU">Uruguay Peso</option>
+            <option value="UZS">Uzbekistan Som</option>
+            <option value="VND">Viet Nam Dong</option>
+            <option value="YER">Yemen Rial</option>
+            <option value="ZMW">Zambia Kwacha</option>
+            <option value="AFN">Afghan Afghani</option>
+            <option value="BCH">Bitcoin Cash</option>
+            <option value="BTC">Bitcoin</option>
+            <option value="CLF">Unidad de Fomento</option>
+            <option value="CNH">Chinese Renminbi Yuan Offshore</option>
+            <option value="ETH">Ethereum</option>
+            <option value="LTC">Litecoin</option>
+            <option value="BYR">Belarusian Ruble</option>
+            <option value="CUC">Cuban Convertible Peso</option>
+            <option value="EEK">Estonian Kroon</option>
+            <option value="ERN">Eritrean Nakfa</option>
+            <option value="FKP">Falkland Pound</option>
+            <option value="GGP">Guernsey Pound</option>
+            <option value="GIP">Gibraltar Pound</option>
+            <option value="IMP">Isle of Man Pound</option>
+            <option value="JEP">Jersey Pound</option>
+            <option value="LTL">Lithuanian Litas</option>
+            <option value="MTL">Maltese Lira</option>
+            <option value="SHP">Saint Helenian Pound</option>
+            <option value="STD">São Tomé and Príncipe Dobra</option>
+          </select>
+          <br><br>
+          <input type="submit" value="Потврди">
+        </form>
+
+    <h2> За следење на моменталната цена на златото, кликнете на линкот "Берза за злато" </h2>
+    
+    <a href='zlato'>Берза за злато</a>
+
+    <h6>Сите податоци се во реално време и за нивната веродостојност гарантира https://rapidapi.com/solutionsbynotnull/api/live-metal-prices</h6>
+
+    </body>
+</html>
